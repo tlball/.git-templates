@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# A git hook that pre-populates a git commit message before message is added
+# adapted from this blog post: http://waiting-for-dev.github.io/blog/2014/07/19/append-issue-number-to-commit-message-automatically-with-git-hooks/
+
+# Parse a story id from the current branch's name (if one exists) and adds it
+# to the commit message using bracket notation
+
+# skip if an argument is passed
+if [ x = x${2} ]; then
+  BRANCH_NAME=$(git symbolic-ref --short HEAD)
+  STORY_NUMBER=$(echo $BRANCH_NAME | sed -n 's/\([0-9]\)-.*/\1/p')
+  # check if STORY_NUMBER exists
+  if [ x != x${STORY_NUMBER} ]; then
+    sed -i.back "1s/^/[#$STORY_NUMBER]/" "$1"
+  fi
+fi
