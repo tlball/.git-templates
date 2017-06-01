@@ -4,7 +4,7 @@ A listing of git templates to use globally or in individual git projects.
 ## Setup
 
 ### Individually
-To use these scripts individually, clone this project, and copy any disired file to the same relative path within your project's `.git` directory
+To use these scripts individually, clone this project, and copy any desired file to the same relative path within your project's `.git` directory
 
 ### Globally
 Note: If using these templates gloablly, all scripts will be used for any project that is cloned or initialized.
