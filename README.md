@@ -9,7 +9,7 @@ To use these scripts individually, clone this project, and copy any desired file
 ### Globally
 Note: If using these templates gloablly, all scripts will be used for any project that is cloned or initialized.
 
-`$ git config –global init.templatedir '<PATH/TO/THIS/PROJECT/CLONE>`
+`$ git config --global init.templatedir '<PATH/TO/THIS/PROJECT/CLONE>`
 
 This tells git to copy everything in this project to your per-project .git/ directory when you run `git init` or `git clone`.
 
