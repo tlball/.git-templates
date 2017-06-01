@@ -9,7 +9,8 @@
 # skip if an argument is passed
 if [ x = x${2} ]; then
   BRANCH_NAME=$(git symbolic-ref --short HEAD)
-  STORY_NUMBER=$(echo $BRANCH_NAME | sed -n 's/\([0-9]\)-.*/\1/p')
+  # using `[0-9][0-9]*` here instead of `[0-9]+` because sed in OSX is jank
+  STORY_NUMBER=$(echo $BRANCH_NAME | sed -n 's/^\([0-9][0-9]*\)[-_].*/\1/p')
   # check if STORY_NUMBER exists
   if [ x != x${STORY_NUMBER} ]; then
     sed -i.back "1s/^/[#$STORY_NUMBER]/" "$1"
