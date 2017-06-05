@@ -1,4 +1,4 @@
-# .git-templates
+# git-templates
 A listing of git templates to use globally or in individual git projects.
 
 ## Setup
